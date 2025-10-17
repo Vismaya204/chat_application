@@ -1,4 +1,5 @@
 import 'package:chat_application/chat_screen.dart';
+import 'package:chat_application/chatbot.dart';
 import 'package:chat_application/login_screen.dart';
 import 'package:chat_application/profilepage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
@@ -17,7 +18,9 @@ class _ChatListState extends State<ChatList> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return Scaffold(floatingActionButton: FloatingActionButton(child:Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvfAQuVuRkUnwgyxSFbaWshEdWjQ9eIUxmGA&s"),onPressed: () {
+      Navigator.push(context, MaterialPageRoute(builder: (context) => Chatbot(),));
+    },),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 163, 33, 243),
         iconTheme: IconThemeData(color: Colors.white),
